@@ -1,0 +1,6 @@
+{
+  "name": "Montu Baruah Portal",
+  "description": "Nagaon, Assam's Digital Expert & Creator Solutions Portal for payout locks, name corrections, and CMT pages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
