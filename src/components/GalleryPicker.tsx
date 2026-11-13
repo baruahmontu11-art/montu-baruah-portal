@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Image as ImageIcon, Upload, X, Loader2, Check, Trash2 } from 'lucide-react';
 import { fetchMedia, uploadMedia, deleteMedia } from '../lib/api';
 

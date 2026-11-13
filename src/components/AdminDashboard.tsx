@@ -686,6 +686,54 @@ export default function AdminDashboard({ onSuccess, onError }: AdminDashboardPro
                       </div>
                     </div>
 
+                    {/* Homepage Images — Hero photo + Creator Toolkit poster.
+                        Upload from the device gallery (or pick an already uploaded
+                        image). Saved with "Save Branding Parameters" below. */}
+                    <div className="border border-slate-200 p-5 rounded-2xl flex flex-col gap-4">
+                      <div>
+                        <h3 className="text-sm font-black text-[#0B1120] mb-1">Homepage Images</h3>
+                        <p className="text-[11px] text-slate-500 font-semibold">Your own photos for the two highlighted spots on the homepage. Upload from your device gallery, or choose an image you uploaded before.</p>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 flex flex-col gap-2">
+                          <label className="block text-[10px] uppercase tracking-wider text-slate-600 font-bold">Hero Photo (top card)</label>
+                          <GalleryPicker
+                            label="Select Hero Photo"
+                            value={settings.heroImageUrl || ''}
+                            onChange={(url) => setSettings({ ...settings, heroImageUrl: url })}
+                          />
+                          {settings.heroImageUrl && (
+                            <button
+                              type="button"
+                              onClick={() => setSettings({ ...settings, heroImageUrl: '' })}
+                              className="self-start text-[10px] font-bold text-red-500 hover:text-red-700 cursor-pointer"
+                            >
+                              Remove photo — show the default MB card again
+                            </button>
+                          )}
+                          <p className="text-[10px] text-slate-400 font-semibold">Portrait or square photo looks best. Replaces the dark MB card next to the headline.</p>
+                        </div>
+                        <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 flex flex-col gap-2">
+                          <label className="block text-[10px] uppercase tracking-wider text-slate-600 font-bold">Creator Toolkit Poster</label>
+                          <GalleryPicker
+                            label="Select Toolkit Poster"
+                            value={settings.toolkitImageUrl || ''}
+                            onChange={(url) => setSettings({ ...settings, toolkitImageUrl: url })}
+                          />
+                          {settings.toolkitImageUrl && (
+                            <button
+                              type="button"
+                              onClick={() => setSettings({ ...settings, toolkitImageUrl: '' })}
+                              className="self-start text-[10px] font-bold text-red-500 hover:text-red-700 cursor-pointer"
+                            >
+                              Remove photo — show the default phone poster again
+                            </button>
+                          )}
+                          <p className="text-[10px] text-slate-400 font-semibold">Portrait photo looks best. Replaces the phone image in the “Montu Baruah Creator Toolkit” section.</p>
+                        </div>
+                      </div>
+                    </div>
+
                     {/* Paytm Merchant & UPI Parameters */}
                     <div className="border border-slate-200 p-5 rounded-2xl flex flex-col gap-4">
                       <h3 className="text-sm font-black text-[#0B1120] mb-1">Paytm & Manual QR Payments Configuration</h3>

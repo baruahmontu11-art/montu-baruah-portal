@@ -5,9 +5,11 @@ import { AppPromo } from '../types';
 interface UpcomingAppProps {
   appData: AppPromo | null;
   onPreRegister: (appId: string, emailOrPhone: string) => Promise<boolean>;
+  /** Admin-uploaded poster from Settings → Homepage Images. Overrides appData.posterUrl when set. */
+  posterOverride?: string;
 }
 
-export default function UpcomingApp({ appData, onPreRegister }: UpcomingAppProps) {
+export default function UpcomingApp({ appData, onPreRegister, posterOverride }: UpcomingAppProps) {
   const [emailOrPhone, setEmailOrPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
@@ -48,7 +50,7 @@ export default function UpcomingApp({ appData, onPreRegister }: UpcomingAppProps
           <div className="lg:col-span-5 flex justify-center order-last lg:order-first">
             <div className="relative group overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl max-w-xs sm:max-w-sm">
               <img 
-                 src={appData.posterUrl || 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=60'} 
+                 src={posterOverride || appData.posterUrl || 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=60'} 
                  alt={`${appData.name} Poster`} 
                  className="h-96 w-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
               />

@@ -86,7 +86,21 @@ export default function Hero({ settings, onNavigate }: HeroProps) {
                 </div>
               </div>
 
-              {/* Central Premium Branded Character Card */}
+              {/* Central Premium Branded Character Card — or the owner's own photo,
+                  uploaded from the Admin Panel (Settings → Homepage Images). */}
+              {settings.heroImageUrl ? (
+                <div className="relative h-full w-full overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+                  <img
+                    src={settings.heroImageUrl}
+                    alt={settings.name || 'Montu Baruah'}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/70 to-transparent px-5 pb-5 pt-16 text-center">
+                    <h3 className="text-xl font-bold tracking-tight text-white">{settings.name || 'Montu Baruah'}</h3>
+                    <p className="text-xs text-[#22D3EE] font-bold tracking-widest uppercase">Assam, India</p>
+                  </div>
+                </div>
+              ) : (
               <div className="flex flex-col items-center justify-center h-full w-full rounded-2xl bg-[#0B1120] text-white p-8 border border-slate-800 shadow-2xl relative overflow-hidden">
                 {/* Visual accent background circles */}
                 <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-[#2563EB]/10 blur-xl" />
@@ -105,6 +119,7 @@ export default function Hero({ settings, onNavigate }: HeroProps) {
                   "Helping creators protect their payouts, secure their accounts, and master vertical video distribution policies."
                 </p>
               </div>
+              )}
             </div>
           </div>
         </div>

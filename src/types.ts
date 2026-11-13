@@ -7,6 +7,8 @@ export interface WebsiteSettings {
   name: string;
   tagline: string;
   logoUrl: string;
+  heroImageUrl?: string;
+  toolkitImageUrl?: string;
   mobileLogoUrl?: string;
   faviconUrl?: string;
   email: string;

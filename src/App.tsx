@@ -286,7 +286,7 @@ export default function App() {
 
             {/* Mobile pre-registration */}
             {activeApp && (
-              <UpcomingApp appData={activeApp} onPreRegister={handlePreRegister} />
+              <UpcomingApp appData={activeApp} onPreRegister={handlePreRegister} posterOverride={settings.toolkitImageUrl} />
             )}
           </div>
         )}

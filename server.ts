@@ -38,7 +38,9 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 const DEFAULT_SETTINGS = {
   name: 'Montu Baruah',
   tagline: 'Social Media Educator | Facebook Creator | Digital Solutions Provider',
-  logoUrl: '',
+  logoUrl: '/assets/logo.jpg',
+  heroImageUrl: '',
+  toolkitImageUrl: '',
   email: 'officialmontubaruah@gmail.com',
   whatsappNumber: '+918136081232',
   facebookPrimaryUrl: 'https://www.facebook.com/MontuBaruahOfficial',
@@ -46,8 +48,8 @@ const DEFAULT_SETTINGS = {
   instagramUrl: 'https://www.instagram.com/themontubaruah',
   youtubeUrl: 'https://youtube.com/@montubaruahofficial',
   telegramUrl: 'https://t.me/montubaruahofficial',
-  upiId: 'montubaruah@upi',
-  upiQrUrl: '', // generated placeholder or uploaded later
+  upiId: 'paytm.s2zpbq1@pty',
+  upiQrUrl: '/assets/upi-qr.jpg', // shipped with the site so it survives redeploys
   paytmMerchantId: 'AJrXmZ03694980164704',
   razorpayKeyId: 'rzp_test_placeholder',
   footerText: '© 2026 Montu Baruah. All Rights Reserved. Empowering digital growth across Assam & India.',
@@ -60,32 +62,52 @@ const DEFAULT_SETTINGS = {
     {
       id: 'svc-source-transfer',
       key: 'SOURCE_TRANSFER',
-      name: 'Source Transfer Solution',
+      name: 'PAYOUT SOURCE TRANSFER ',
       description: 'Coordinate secure monetization page/source transfer rights.',
-      badge: 'Special Promotion',
-      price: 3500,
+      badge: '𝐒𝐩𝐞𝐜𝐢𝐚𝐥 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧 🎉',
+      price: 2500,
       originalPrice: 5499,
       order: 1
     },
     {
       id: 'svc-name-change',
       key: 'NAME_CHANGE',
-      name: 'Name Change Setup',
+      name: 'PAYOUT DOB, NAME & BUSINESS TYPE CHANGE ',
       description: 'Bypass limits to correct or align payout creator names.',
-      badge: 'Page Fixes',
-      price: 3500,
+      badge: '𝐏𝐚𝐠𝐞 𝐅𝐢𝐱𝐞𝐬 ✨',
+      price: 2500,
       originalPrice: 4999,
       order: 2
     },
     {
       id: 'svc-create-payout',
       key: 'CREATE_NEW_PAYOUT',
-      name: 'Create New Payout Profile',
+      name: 'CREATE NEW PAYOUT ACCOUNT',
       description: 'Step-by-step guidance on establishing new bank configurations.',
-      badge: '',
+      badge: '𝐅𝐫𝐞𝐞 𝐒𝐞𝐫𝐯𝐢𝐜𝐞 🥳',
       price: 0,
       originalPrice: 0,
       order: 3
+    },
+    {
+      id: 'svc-1794295167158',
+      key: 'SVC_1794295167158',
+      name: 'FACEBOOK ACCOUNT RECOVERY ',
+      description: '',
+      badge: '𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 🔥',
+      price: 3000,
+      originalPrice: 9500,
+      order: 4
+    },
+    {
+      id: 'svc-1794295477394',
+      key: 'SVC_1794295477394',
+      name: 'HACKED PAYOUT RECOVERY ',
+      description: '',
+      badge: '𝐏𝐚𝐠𝐞 𝐅𝐢𝐱𝐞𝐬 ✨',
+      price: 9500,
+      originalPrice: 15000,
+      order: 5
     }
   ]
 };
